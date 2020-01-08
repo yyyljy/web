@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function calPrice(){
+			totalprice = 12900*bom.price.value*0.9;
+			document.getElementById("result").innerHTML = totalprice;
+		}
+	</script>
+</head>
+<body>
+	<form name="bom">
+		수량 : <input type="text" name="price" onkeyup="calPrice()">
+		<span id=result style="color: red"></span>
+	</form>
+</body>
+</html>

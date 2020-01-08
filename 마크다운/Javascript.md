@@ -48,3 +48,15 @@
 3. ReactJS - 웹 UI개발에 사용
 4. Vue.js
 5. D3
+
+
+
+## 파일명을 변수로 지정하여 사용할 때
+
+```javascript
+//파일명에 변수 이용하는 방법
+<script type="text/javascript">
+	document.write("<img src='../images/jang"+myimg+"'/>");
+</script>
+```
+
