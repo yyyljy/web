@@ -23,12 +23,26 @@
 			//alert(window.document.myform.id.value)
 			//mypopup2.document.mypopup.data.value = myform.id.value;
 		}
+		function test_number(){
+			num1 = window.parseInt(myform.num1.value); //getter
+			num2 = parseInt(myform.num2.value);
+			myform.result.value = num1+num2; //setter
+		}
+		function test_number2(){
+			//alert("isNaN의 결과=>"+window.isNaN(myform.num1.value));
+			//alert("eval의 결과=>"+eval(myform.num1.value));
+			data = myform.num1.value;
+			alert("문자열의 길이=>"+data.length);
+			data2 = data.trim();
+			alert("문자열의 길이=>"+data2.length);
+		}
 	</script>
 </head>
 <body>
 	<button onClick="window.alert('경고창')">경고창</button>
 	<button onClick="testConfirm()">확인창</button>
 	<button onClick="test_number()">숫자처리메서드</button>
+	<button onClick="test_number2()">숫자처리메서드2</button>
 	<button onClick="window.close()">닫기</button>
 	
 	<form action="" name="myform">
@@ -38,9 +52,11 @@
 		우편번호 : <input type="text" name="zipcode"	>
 		<input type="button" value="SEARCH ADDRESS" onClick="idcheck()">
 		<br>
-		
-		상세주소 : <input type="text" name="address"><br>
 		<input type="submit" value="SEND">
+		상세주소 : <input type="text" name="address"><br>
+		num1 : <input type="text" name="num1"><br>
+		num2 : <input type="text" name="num2"><br>
+		결과 : <input type="text" name="result"><br>
 	</form>
 </body>
 </html>
