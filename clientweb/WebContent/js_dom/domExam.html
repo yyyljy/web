@@ -1,8 +1,50 @@
 <!DOCTYPE html>
+<!-- 
+	P태그 추가 ("newP")
+	P태그 밑에서부터 삭제 - 한번 눌러도 삭제 되도록
+ -->
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function insertP(){
+			pNode = document.createElement("p");
+			textNode = document.createTextNode("newP");
+			pNode.setAttribute("style", "background: yellow");
+			pNode.appendChild(textNode);
+			parentNode = document.getElementById("root");
+			parentNode.appendChild(pNode);
+		}
+		function deleteP(){
+			parentNode = document.getElementById("root");
+			while(parentNode.lastChild.nodeName=="#text"){
+				parentNode.removeChild(parentNode.lastChild);
+			}
+			if(parentNode.lastChild.nodeName=="P"){
+				parentNode.removeChild(parentNode.lastChild);
+			}
+		}
+		function deleteDivAndP(){
+			divArr = document.getElementsByTagName("div");
+			for(i=0;i<divArr.length;i++){
+				childArr = divArr[i].childNodes;
+				size = childArr.length;
+				for(j=0;j<size;j++){
+					if(childArr[j].nodeName=="#text"){
+						divArr[i].removeChild(childArr[j]);
+					}
+					if(childArr[j].nodeName=="P"){
+						divArr[i].removeChild(childArr[j]);
+					}
+				}
+			}
+			parentNode = document.getElementById("root");
+		}
+		function innerHTML_test(){
+			
+		}
+	</script>
 </head>
 <body>
 	<div id="layer"></div>

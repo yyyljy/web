@@ -1,4 +1,6 @@
-# BOM
+# *BOM & DOM*
+
+# `BOM`
 
 - 브라우저에 출력되는 모든 구성요소를 객체로 정의하고 접근
 - window
@@ -87,3 +89,13 @@
    - onmouseover, onmouseout
    - onchange
    - onload
+
+
+
+# `DOM`
+
+자식노드를 받아올 때 공백 노드도 생기니까 꼭 처리 해주기
+
+parentNode.lastchild - 공백 포함
+
+parentNode.lastElementChild - 공백 포함 x

@@ -12,7 +12,16 @@
 		 -->
 	<script type="text/javascript">
 		window.onload = function(){
-			document.getElementById("btn1").onclick = function(){
+			btnArr = document.getElementById("btn");
+			alert(btnArr.length);
+			for(i=0;i<btnArr.length;i++){
+				alert("btnArr["+i+"]");
+				document.getElementById("btnArr["+i+"]").onclick = function(){
+					alert(i+"번버튼");
+				}
+			}
+		}
+		/* 	document.getElementById("btn1").onclick = function(){
 				alert("1번버튼");
 			}
 			document.getElementById("btn2").onclick = function(){
@@ -22,7 +31,7 @@
 				alert("3번버튼");
 			}
 			document.getElementById("btn4").onclick = btnclick;
-		} 
+		}  */
 		btnclick = function btntest(){
 			alert("4번버튼");
 		}
@@ -30,10 +39,10 @@
 </head>
 <body>
 	<form>
-		<input type="button" value="1번버튼" id="btn1"/>
-		<input type="button" value="2번버튼" id="btn2"/>
-		<input type="button" value="3번버튼" id="btn3"/>
-		<input type="button" value="4번버튼" id="btn4"/>
+		<input type="button" value="1번버튼" id="btn"/>
+		<input type="button" value="2번버튼" id="btn"/>
+		<input type="button" value="3번버튼" id="btn"/>
+		<input type="button" value="4번버튼" id="btn"/>
 	</form>
 </body>
 </html>
