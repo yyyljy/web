@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		//아이디체크하기 - 4글자 이상 , java면 이미 사용중인 아이디 아니면 사용가능아이디
+		//출력하기 - jQuery로 변경하기
+		$(document).ready(function() {
+			$("#id").on("keyup", function() {
+				idtext = $("#id").val();
+				resultTxt = "";
+				if(idtext.length<4){
+					resultTxt = "아이디는 4글자 이상입니다.";
+				}else{
+					//기존에 존재하는 아이디인지 체크 - Ajax로 처리(DB연동)
+					if(idtext=="java"){
+						resultTxt = "사용중인 아이디입니다.";
+					}else{
+						resultTxt = "사용 가능한 아이디 입니다.";
+					}
+				}
+				//웹페이지에 div태그 내부에 문자열을 추가 - html()를 이용해도 좋다.
+				$("#result").text(resultTxt);
+			});
+		});
+	
+	</script>
+</head>
+<body>
+	<h1>티몬 회원가입</h1>
+	<h2>필수항목</h2>
+	<form name="myform">
+		아이디:<input type="text" id="id" />
+	</form>
+	<div id="result" style="color: red;"></div>
+</body>
+</html>

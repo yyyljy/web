@@ -3,10 +3,34 @@
 <head>
 <meta charset="EUC-KR" />
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 </script>
 <script type="text/javascript">
-
+	//data = $("<p>dom엑세스하는 방법</p>");
+	data = "<p>dom엑세스하는 방법^^</p>";
+	$(document).ready(function() {
+		$("#append").on("click", function() {
+			$("#btns").append(data);	
+		});
+		$("#prepend").on("click", function() {
+			$("#btns").prepend(data);	
+		});
+		$("#after").on("click", function() {
+			$("#btns").after(data);	
+		});
+		$("#before").on("click", function() {
+			$("#btns").before(data);	
+		});
+		$("#remove").on("click", function() {
+			$("#btns").remove();
+			//특정객체를 지우려면 선택자를 remove안에 정의
+			//선택된 노드와 하위노드를 모두 제거
+		});
+		$("#empty").on("click", function() {
+			$("#btns").empty(data);	
+			//선택된 노드의 하위노드만 제거
+		});
+	});
 </script>
 </head>
 <body>
@@ -16,26 +40,18 @@
 		<div id="domtestbtn">
 			<form id="myformId" name="myform">	
 				<div id="btns" style="border: solid 1px blue">	
-					<input type="button" value="append"
-						 name="btn" id="append" />
-					<input type="button" value="prepend"
-						 name="btn" id="prepend" />
+					<input type="button" value="append" name="btn" id="append" />
+					<input type="button" value="prepend" name="btn" id="prepend" />
 						 
-					<input type="button" value="after"
-						 name="btn" id="after" />
-					<input type="button" value="before"
-						 name="btn" id="before" />
+					<input type="button" value="after" name="btn" id="after" />
+					<input type="button" value="before" name="btn" id="before" />
 				
-					<input type="button" value="remove"
-						 name="btn" id="remove" />
-					<input type="button" value=empty
-						 name="btn" id="empty" />
+					<input type="button" value="remove" name="btn" id="remove" />
+					<input type="button" value=empty name="btn" id="empty" />
 				</div>
 			</form>
-			
 		</div>
 	</div>
-	
 </body>
 </html>
 
