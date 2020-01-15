@@ -13,7 +13,7 @@
 
    	- classes 폴더
             	- (\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\serverweb\WEB-INF\classes)
-            	- ex) ../WEB-INF/classes/serverweb 
+                        	- ex) ../WEB-INF/classes/serverweb 
 
    나. public 클래스로 작성해야 된다.
 
@@ -153,5 +153,41 @@
 
 ## 3. 클라이언트가 전달하는 요청 메세지에서 클라이언트의 입력정보를 추출하기
 
+- 클라이언트가 요청 메세지를 서버로 전달하면 여러가지 클라이언트 정보(클라이언트가 입력한 데이터, 쿠키, 세션정보, 클라이언트의 ip, port..)가 서버로 전달된다. 서버는 이 데이터를 가지고 요청객체를 생성한다.
+
+  - http프로토콜에 특화된 내용은 => HttpServletRequest에서 찾는다.
+  - 일반적인 내용은 ServletRequest에서 찾는다.
+
+- 요청 정보 추출
+
+  - getParameter
+
+    - ServletRequestgetParameter
+
+      ServletRequest의 메소드로 메소드를 호출하며 전달한 name에 대한 value를 리턴
+      
+      리턴값 : String으로 `파라미터값`
+      
+      ​			`파라미터값` : 주소표시줄에 직접넘긴 value로 =의 오른쪽 문자열
+      
+      ​								form태그를 이용해서 사용자가 직접 입력한 값
+      
+      매개변수 : String으로 `파라미터 이름`
+      
+      ​				`파라미터 이름` : 주소 표시줄에 직접 넘긴 name으로 =의 왼쪽에 있는 문자열
+      
+      ​											양식태그를 정의할 때 name속성에 정의한 값
+      
+      ​											<input type="text" name="id">
+    
+  - getParameterValues
+  
+    ServletRequest의 메소드로 파라미터명이 같은 모든 value를 모아서 String[]로 리턴
+  
+    => CheckBox, List에서 복수 개 선택, 임의로 동일한 이름을
+  
+    리턴타입 :  String[]
+
 ## 4. DB연동
 
+qweqwe

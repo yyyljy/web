@@ -28,4 +28,21 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/agree.html</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/WebProject/git/agree.html</locationURI>
+		</link>
+		<link>
+			<name>WebContent/join.html</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/WebProject/git/login.html</locationURI>
+		</link>
+		<link>
+			<name>WebContent/news.html</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/WebProject/git/news.html</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
