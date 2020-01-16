@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 public class PostFormServlet extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException{
-		String[] arr = req.getParameterValues("");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
+		String[] item = req.getParameterValues("item");
+		String userId =req.getParameter("userId");
+		String userName =req.getParameter("userName");
+		String passwd =req.getParameter("passwd");
+		String gender =req.getParameter("gender");
+		String job =req.getParameter("job");
 	}
 }
