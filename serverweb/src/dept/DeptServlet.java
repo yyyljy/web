@@ -3,6 +3,7 @@ package dept;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,15 +21,20 @@ public class DeptServlet extends HttpServlet {
 		String loc = request.getParameter("loc");
 		String tel = request.getParameter("tel");
 		String mgr = request.getParameter("mgr");
-		System.out.println("부서번호:"+deptNo);
+		/*System.out.println("부서번호:"+deptNo);
 		System.out.println("부서명:"+deptName);
 		System.out.println("위치:"+loc);
 		System.out.println("전화번호:"+tel);
-		System.out.println("매니저:"+mgr);
+		System.out.println("매니저:"+mgr);*/
 		DeptDTO dept = new DeptDTO(deptNo, deptName, loc, tel, mgr);
 		DeptDAO dao = new DeptDAOImpl();
 		int result = dao.insert(dept);
-		System.out.println(result+"개 행 삽입 완료");
-		pw.write(result+"개 행 삽입 완료");
+		//3. 응답화면 요청 재지정
+		//response.sendRedirect("/serverweb/dept/insertResult.html");
+		request.setAttribute("result", result);
+		RequestDispatcher rd = request.getRequestDispatcher("/dept/insertResult.jsp");
+		rd.include(request, response);
+		//System.out.println(result+"개 행 삽입 완료");
+		//pw.write(result+"개 행 삽입 완료");
 	}
 }

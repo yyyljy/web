@@ -18,12 +18,8 @@ public class DeleteServlet extends HttpServlet {
 		DeptDAO dao = new DeptDAOImpl();
 		int result = dao.delete(deptno);
 		
+		//3. 응답화면 요청 재지정
 		response.sendRedirect("/serverweb/dept/list.do");
-		/*String resulttxt = result+"개 행 삭제";
-		System.out.println(resulttxt);
-		pw.write("<html><body>");
-		pw.write(resulttxt);
-		pw.write("<a href='/serverweb/dept/list.do'>목록보기</a></body></html>");*/
 	}
 
 }

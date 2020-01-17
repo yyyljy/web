@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,10 @@ public class ListServlet extends HttpServlet {
 		DeptDAO dao = new DeptDAOImpl();
 		DeptDTO dto = null;
 		ArrayList<DeptDTO> dtoArr = dao.getDeptList();
-		pw.write("<html>");
+		request.setAttribute("deptArr", dtoArr);
+		RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
+		rd.forward(request, response);
+		/*pw.write("<html>");
 		pw.write("<body>");
 		pw.write("<table border= 'solid 1px black'><th>부서코드</th>\r\n" + 
 				"		<th>부서명</th>\r\n" + 
@@ -39,6 +43,6 @@ public class ListServlet extends HttpServlet {
 			pw.write("<td><a href='/serverweb/dept/delete.do?deptno="+dto.getDeptNo()+"&info=test'>삭제</a></td>");
 			pw.write("</tr>");
 		}
-		pw.write("</table></body></html>");
+		pw.write("</table></body></html>");*/
 	}
 }
