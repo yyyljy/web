@@ -25,7 +25,7 @@
 		%>
 				<tr>
 					<td><%=deptArr.get(i).getDeptNo() %></td>
-					<td><%=deptArr.get(i).getDeptName() %></td>
+					<td><a href="/serverweb/dept/read.do?deptNo=<%=deptArr.get(i).getDeptNo()%>"><%=deptArr.get(i).getDeptName() %></a></td>
 					<td><%=deptArr.get(i).getLoc() %></td>
 					<td><%=deptArr.get(i).getTel() %></td>
 					<td><%=deptArr.get(i).getMgr() %></td>

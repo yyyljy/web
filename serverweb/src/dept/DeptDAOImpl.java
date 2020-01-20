@@ -79,4 +79,28 @@ public class DeptDAOImpl implements DeptDAO{
 		}
 		return result;
 	}
+	
+	public DeptDTO read(String deptNo) {
+		DeptDTO dept = null;
+		ResultSet rs = null;
+		Connection con = null;
+		PreparedStatement ptmt = null;
+		String sql = "select * from mydept where deptNo = ?";
+		try {
+			con = DBUtil.getConnect();
+			ptmt = con.prepareStatement(sql);
+			ptmt.setString(1, deptNo);
+			rs = ptmt.executeQuery();
+			while(rs.next()) {
+				dept = new DeptDTO(rs.getString(1),rs.getString(2),rs.getString(3),
+						rs.getString(4),rs.getString(5));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.close(null,ptmt,con);
+		}
+		System.out.println("read:"+dept);
+		return dept;
+	}
 }

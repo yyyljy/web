@@ -1,8 +1,6 @@
-package dept;
+package member;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,16 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "list", urlPatterns = { "/dept/list.do" })
-public class ListServlet extends HttpServlet {
+@WebServlet(name = "memRead", urlPatterns = { "/member/read.do" })
+public class MemberReadServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html;charset=euc-kr");
-		DeptDAO dao = new DeptDAOImpl();
-		DeptDTO dto = null;
-		ArrayList<DeptDTO> dtoArr = dao.getDeptList();
-		request.setAttribute("deptArr", dtoArr);
-		RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
+		String id = request.getParameter("id");
+		MemberDAO dao = new MemberDAO();
+		MemberDTO member = dao.read(id);
+		System.out.println("servlet id:"+member.getId());
+		request.setAttribute("member", member);
+		RequestDispatcher rd = request.getRequestDispatcher("/member/member_read.jsp");
 		rd.forward(request, response);
 	}
 }

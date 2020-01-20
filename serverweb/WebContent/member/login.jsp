@@ -8,14 +8,14 @@
 
 </head>
 <body>
-	<form name="login_frm" action="/serverweb/login.do" method="post">
+	<form name="login_frm" action="/serverweb/member/login.do" method="post">
 		<table cellpadding="0" cellspacing=5 width="815" bgcolor=#f3f3f3
 			border=0>
 			<tr>
 				<td bgcolor=#ffffff height=100% align=center valign=top>
 					<table cellpadding=0 cellspacing=0 border=0 width=710>
 
-					
+
 						<tr>
 							<td>
 								<table cellpadding="0" cellspacing=0 width="100%"
@@ -45,12 +45,11 @@
 																				src="../images/login_id.gif"></td>
 																			<td background="../images/inputBg.gif"><input
 																				type="text" name="id" size="15" class="grayinput"
-																				tabindex=1 style="width: 156;"
-																				 value=""></td>
+																				tabindex=1 style="width: 156;" value=""></td>
 																			<td rowspan=3 style="padding-left: 10" valign=bottom>
-																			<input
-																				type='image' src="../images/btn_login.gif"
-																				border="0" tabindex=3></td>
+																				<input type='image' src="../images/btn_login.gif"
+																				border="0" tabindex=3>
+																			</td>
 																		</tr>
 																		<tr>
 																			<td height=10></td>
