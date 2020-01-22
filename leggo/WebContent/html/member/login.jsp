@@ -7,8 +7,7 @@
 
 <title>Login : LEGGO</title>
 
-<link rel="stylesheet" href="/leggo/css/member/login.css" />
-<link rel="stylesheet" href="/leggo/css/member/login1.css" />
+<link rel="stylesheet" href="/leggo/css/main.css" />
 
 </head>
 <body id="login" class="main_frame">

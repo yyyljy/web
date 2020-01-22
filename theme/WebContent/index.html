@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body class="is-preload">
 	<!-- Page Wrapper -->
@@ -46,10 +45,6 @@
 					<div class="span-3">
 						<ul class="contact-icons color1">
 							<li class="icon brands fa-twitter"><a href="#">@Kakao</a></li>
-							<li class="icon brands fa-facebook-f"><a href="#">naver.com/NAVER</a></li>
-							<li class="icon brands fa-snapchat-ghost"><a href="#">@untitled-tld</a></li>
-							<li class="icon brands fa-instagram"><a href="#">@untitled-tld</a></li>
-							<li class="icon brands fa-medium-m"><a href="#">medium.com/untitled</a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,7 +55,7 @@
 				<section class="panel color2-alt">
 					<div class="inner columns divided">
 						<div class="span-3">
-							<h1 class="major">Sign up</h1>
+							<h1 class="major">회원 가입</h1>
 							<div class="input_box">
 								<input type="text" id="sign_up_id"
 									name="sign_up[id]" required="required"
@@ -130,11 +125,11 @@
 							<div class="input_box">
 								<input type="text" id="sign_up_postcode"
 									name="sign_up[postcode]" required="required"
-									placeholder="우편번호" class="form-control1" />
+									placeholder="우편번호" class="form-control" />
 								<br/>
 								<input type="button" id="sign_up_getaddr" 
 									name="sign_up[getaddr]" onclick="execDaumPostcode()"
-									value="우편번호 찾기" class="form-control1">
+									value="우편번호 찾기" class="form-control"><br/>
 								<br/>
 							</div>
 							<div class="input_box">
@@ -194,10 +189,6 @@
 						<br/>
 						<br/>
 						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
 						<div class="input_box">
 							생년월일 : <input type="text" id="sign_up_birth" name="sign_up[birth]" required="required"
 									placeholder="생년월일" class="form-control" /><br/>
@@ -213,10 +204,10 @@
 						<div class="input_box">
 							우편번호 : <input type="text" id="sign_up_postcode"
 								name="sign_up[postcode]" required="required"
-								placeholder="우편번호" class="form-control1" /><br/>
+								placeholder="우편번호" class="form-control" /><br/>
 							<input type="button" id="sign_up_getaddr" 
 								name="sign_up[getaddr]" onclick="execDaumPostcode()"
-								value="우편번호 찾기" class="form-control1"><br/>
+								value="우편번호 찾기" class="form-control"><br/>
 						</div>
 						<div class="input_box">
 							주소 : <input type="text" id="sign_up_address"
@@ -253,6 +244,7 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 			<script>
 			    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 			    function execDaumPostcode() {
